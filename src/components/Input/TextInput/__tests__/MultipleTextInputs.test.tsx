@@ -1,7 +1,7 @@
 import { render, screen, cleanup } from "@testing-library/react";
 import { MultipleTextInputs } from "../MultipleTextInputs";
 
-describe("On load", () => {
+describe("Multiple text inputs", () => {
     afterEach(cleanup);
 
     it("should contain 2 text input elements", () => {

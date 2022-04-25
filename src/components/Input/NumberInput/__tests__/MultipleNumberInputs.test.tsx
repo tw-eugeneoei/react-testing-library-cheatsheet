@@ -1,7 +1,7 @@
 import { render, screen, cleanup } from "@testing-library/react";
 import { MultipleNumberInputs } from "../MultipleNumberInputs";
 
-describe("On load", () => {
+describe("Multiple number inputs", () => {
     afterEach(cleanup);
 
     it("should contain 2 number input elements", () => {
