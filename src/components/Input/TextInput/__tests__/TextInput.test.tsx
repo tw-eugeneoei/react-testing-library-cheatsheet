@@ -1,8 +1,10 @@
-import { render, screen } from "@testing-library/react";
+import { render, screen, cleanup } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { TextInput } from "../TextInput";
 
 describe("Text input", () => {
+    afterEach(cleanup);
+
     it("should contain 'Required...' in placeholder on load", () => {
         render(<TextInput />);
 

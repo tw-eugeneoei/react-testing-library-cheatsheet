@@ -1,10 +1,10 @@
-import logo from "./logo.svg";
-import "./App.css";
+import { Grid } from "@mui/material";
+import { NumberInput } from "./components/Input/NumberInput/NumberInput";
 
 function App() {
     return (
-        <div className="App">
-            <header className="App-header">
+        <Grid container justifyContent={"center"}>
+            {/* <header className="App-header">
                 <img src={logo} className="App-logo" alt="logo" />
                 <p>
                     Edit <code>src/App.tsx</code> and save to reload.
@@ -17,8 +17,11 @@ function App() {
                 >
                     Learn React
                 </a>
-            </header>
-        </div>
+            </header> */}
+            <Grid item xs={12}>
+                <NumberInput />
+            </Grid>
+        </Grid>
     );
 }
 

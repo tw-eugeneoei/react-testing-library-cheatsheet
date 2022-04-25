@@ -1,7 +1,13 @@
-import { Input } from "@mui/material";
+import { TextField } from "@mui/material";
 
 const NumberInput = () => {
-    return <Input type="number" />;
+    return (
+        <TextField
+            label="Number Input Element"
+            type="number"
+            variant="outlined"
+        />
+    );
 };
 
 export { NumberInput };
