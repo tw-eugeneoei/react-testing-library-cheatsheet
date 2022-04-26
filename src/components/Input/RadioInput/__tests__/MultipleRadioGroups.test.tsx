@@ -1,5 +1,4 @@
 import { render, screen, cleanup } from "@testing-library/react";
-import userEvent from "@testing-library/user-event";
 import { MultipleRadioGroups } from "../MultipleRadioGroups";
 
 describe("Multiple radio groups", () => {

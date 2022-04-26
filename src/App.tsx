@@ -1,11 +1,11 @@
 import { Grid } from "@mui/material";
-import { MultipleRadioGroups } from "./components/Input/RadioInput/MultipleRadioGroups";
+import { MultipleControlledRadioInputs } from "./components/Input/RadioInput/MultipleControlledRadioInputs";
 
 function App() {
     return (
         <Grid container justifyContent={"center"}>
             <Grid item xs={12}>
-                <MultipleRadioGroups />
+                <MultipleControlledRadioInputs />
             </Grid>
         </Grid>
     );
