@@ -104,11 +104,7 @@ const ageRangeRadioGroup = screen.getByRole("radiogroup", {
 
 ### Use "as HTML\<element-type\>Element" on DOM nodes
 
-This gives access to the attributes of targetted HTML element.
-
-### Avoid using `textContent` on \<select\> elements
-
-It returns all options' values concatenated into a string
+This gives access to the values of different attributes such as `value` and `checked` of targetted HTML element.
 
 ### Always use the `<label>` tag to define labels for `<input>` elements
 
