@@ -84,6 +84,18 @@ const seniorConsultantRadio = screen.getByRole("radio", {
 
 ### Multiple groups of radio buttons within component
 
+On ocassions, where different groups of radio buttons such as "Grade" and "Age Range" group,
+
+```ts
+const gradeRadioGroup = screen.getByRole("radiogroup", {
+    name: /grade/i,
+});
+
+const ageRangeRadioGroup = screen.getByRole("radiogroup", {
+    name: /age range/i,
+});
+```
+
 # Tips
 
 ### Use "as HTML\<element-type\>Element" on DOM nodes

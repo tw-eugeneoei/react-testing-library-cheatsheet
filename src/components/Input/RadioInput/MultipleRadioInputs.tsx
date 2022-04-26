@@ -9,8 +9,8 @@ import {
 const MultipleRadioInputs = () => {
     return (
         <FormControl>
-            <FormLabel id="grade-radio-buttons-group">Grade</FormLabel>
-            <RadioGroup aria-labelledby="grade-radio-buttons-group">
+            <FormLabel id="grade-radio-group">Grade</FormLabel>
+            <RadioGroup aria-labelledby="grade-radio-group">
                 <FormControlLabel
                     value="consultant"
                     control={<Radio />}
