@@ -50,7 +50,7 @@ describe("Multiple checkboxes", () => {
         userEvent.click(subsbcribeCheckbox);
         userEvent.click(agreeCheckbox);
 
-        expect(subsbcribeCheckbox.checked).not.toBe(true);
-        expect(agreeCheckbox.checked).not.toBe(true);
+        expect(subsbcribeCheckbox.checked).toBe(false);
+        expect(agreeCheckbox.checked).toBe(false);
     });
 });

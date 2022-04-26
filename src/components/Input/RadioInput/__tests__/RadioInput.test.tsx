@@ -16,7 +16,7 @@ describe("Radio", () => {
         render(<RadioInput />);
         const radio = screen.getByRole("radio") as HTMLInputElement;
 
-        expect(radio.checked).not.toBe(true);
+        expect(radio.checked).toBe(false);
     });
 
     it("should be checked when clicked", () => {

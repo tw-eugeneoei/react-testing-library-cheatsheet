@@ -16,7 +16,7 @@ describe("Checkbox", () => {
         render(<CheckboxInput />);
         const checkbox = screen.getByRole("checkbox") as HTMLInputElement;
 
-        expect(checkbox.checked).not.toBe(true);
+        expect(checkbox.checked).toBe(false);
     });
 
     it("should be unchecked when checkbox is clicked", () => {

@@ -9,7 +9,7 @@ describe("Controlled checkbox", () => {
         render(<ControlledCheckboxInput />);
         const checkbox = screen.getByRole("checkbox") as HTMLInputElement;
 
-        expect(checkbox.checked).not.toBe(true);
+        expect(checkbox.checked).toBe(false);
     });
 
     it("should be checked when clicked", () => {
