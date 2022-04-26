@@ -1,6 +1,6 @@
 # Accessing text `<input>` element
 
-Text `<input>` elements are represented by the role "textbox".
+`<input type='text'>` elements are represented by the role "textbox".
 
 ### If there is only 1 `<input type='text'>` element within component
 
@@ -22,7 +22,7 @@ const passwordInput = screen.getByRole("textbox", {
 
 # Accessing number `<input>` element
 
-Text `<input>` elements are represented by the role "spinbutton".
+`<input type='number'>` elements are represented by the role "spinbutton".
 
 ### If there is only 1 `<input type='number'>` element within component
 
@@ -44,6 +44,8 @@ const ageInput = screen.getByRole("spinbutton", {
 
 # Accessing checkbox `<input>` element
 
+`<input type='checkbox'>` elements are represented by the role "checkbox".
+
 ### If there is only 1 `<input type='checkbox'>` element within component
 
 ```ts
@@ -63,6 +65,8 @@ const agreeCheckbox = screen.getByRole("checkbox", {
 ```
 
 # Accessing radio `<input>` element
+
+`<input type='radio'>` elements are represented by the role "radio". If multiple `<input type='radio'>` elements are grouped together, the specifc group can be accessed by the role "radiogroup".
 
 ### If there is only 1 `<input type='radio'>` element within component
 
