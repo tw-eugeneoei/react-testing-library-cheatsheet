@@ -62,7 +62,7 @@ userEvent.selectOptions(monthDropdown, monthOption);
 userEvent.selectOptions(yearDropdown, yearOption);
 ```
 
-# Accessing Material UI `<Select>`
+# Accessing Material UI `<Select>`, `<Select native>` and `<NativeSelect>`
 
 The native elements used in Material UI's `<Select>` component are:
 
@@ -70,7 +70,9 @@ The native elements used in Material UI's `<Select>` component are:
 -   `<ul>` with `role="listbox"`
 -   `<li>` with `role="option"`
 
-These will be the roles to interact with when writing tests in Testing Library. Though, in Material UI, the native HTML `<select>` element can be used through the `<NativeSelect>` component.
+These will be the roles to interact with when writing tests in Testing Library. Alternatively, to retain the styling and still use native `<select>`, pass `native` property to `<Select>` component.
+
+Or use `<NativeSelect>` component provided by Material UI.
 
 So, depending on the CSS framework used, how elements are accessed may vary.
 
@@ -93,6 +95,23 @@ userEvent.click(
 );
 
 expect(dropdown.textContent).toBe("Orange");
+```
+
+### Combination of `<Select>`, `<Select native>` and `<NativeSelect>`
+
+```ts
+// Material UI default Select component
+const dayDropdown = screen.getByLabelText("Day");
+
+// Material UI Select component with native prop
+const monthDropdown = screen.getByRole("combobox", {
+    name: "Month",
+});
+
+// Material UI NativeSelect component
+const yearDropdown = screen.getByRole("combobox", {
+    name: "Year",
+});
 ```
 
 # Tips
@@ -122,3 +141,7 @@ it("should render select element on load", () => {
     expect(dropdown.textContent).toBe("AppleOrangePear");
 });
 ```
+
+### `SelectChangeEvent` vs `ChangeEvent<HTMLSelectElement>`
+
+Using `<Select>` and `<Select native>` triggers a on change `SelectChangeEvent` type while native `<select>` and `<NativeSelect>` triggers a on change `ChangeEvent<HTMLSelectElement>` type

@@ -1,13 +1,10 @@
-import { Grid } from "@mui/material";
-import { MaterialUiSelect } from "./components/Dropdown/MaterialUiSelect/MaterialUiSelect";
+import { MultipleMaterialUiSelect } from "./components/Dropdown/MaterialUiSelect/MultipleMaterialUiSelect";
 
 function App() {
     return (
-        <Grid container justifyContent={"center"}>
-            <Grid item xs={12}>
-                <MaterialUiSelect />
-            </Grid>
-        </Grid>
+        <div>
+            <MultipleMaterialUiSelect />
+        </div>
     );
 }
 

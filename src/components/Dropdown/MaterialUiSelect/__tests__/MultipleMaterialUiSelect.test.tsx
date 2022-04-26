@@ -1,27 +1,21 @@
 import { render, screen, cleanup } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import { MultipleHtmlSelect } from "../MultipleHtmlSelect";
+import { MultipleMaterialUiSelect } from "../MultipleMaterialUiSelect";
 
-describe("Multiple HTML <select> elements", () => {
+describe("Multiple Material UI <Select>", () => {
     afterEach(cleanup);
 
-    it("should render 3 dropdown elements on load", () => {
-        render(<MultipleHtmlSelect />);
-        const selectElements = screen.getAllByRole("combobox");
-
-        expect(selectElements.length).toBe(3);
-    });
-
-    it("should render day, month and year dropdown elements on load", () => {
-        render(<MultipleHtmlSelect />);
-        const dayDropdown = screen.getByRole("combobox", {
-            name: "Day", // needs to match label of select element
-        });
+    it("should render day, month and year dropdown components on load", () => {
+        render(<MultipleMaterialUiSelect />);
+        // Material UI default Select component
+        const dayDropdown = screen.getByLabelText("Day");
+        // Material UI Select component with native prop
         const monthDropdown = screen.getByRole("combobox", {
-            name: "Month", // needs to match label of select element
+            name: "Month",
         });
+        // Material UI NativeSelect component
         const yearDropdown = screen.getByRole("combobox", {
-            name: "Year", // needs to match label of select element
+            name: "Year",
         });
 
         expect(dayDropdown).toBeInTheDocument();
@@ -30,10 +24,8 @@ describe("Multiple HTML <select> elements", () => {
     });
 
     it("should display 18 for day, 6 for month and 2018 for year", () => {
-        render(<MultipleHtmlSelect />);
-        const dayDropdown = screen.getByRole("combobox", {
-            name: "Day",
-        }) as HTMLSelectElement;
+        render(<MultipleMaterialUiSelect />);
+        const dayDropdown = screen.getByLabelText("Day");
         const dayOption = "18";
         const monthDropdown = screen.getByRole("combobox", {
             name: "Month",
@@ -44,11 +36,16 @@ describe("Multiple HTML <select> elements", () => {
         }) as HTMLSelectElement;
         const yearOption = "2018";
 
-        userEvent.selectOptions(dayDropdown, dayOption);
+        userEvent.click(dayDropdown);
+        userEvent.click(
+            screen.getByRole("option", {
+                name: dayOption,
+            })
+        );
         userEvent.selectOptions(monthDropdown, monthOption);
         userEvent.selectOptions(yearDropdown, yearOption);
 
-        expect(dayDropdown.value).toBe("18");
+        expect(dayDropdown.textContent).toBe("18");
         expect(monthDropdown.value).toBe("6");
         expect(yearDropdown.value).toBe("2018");
     });

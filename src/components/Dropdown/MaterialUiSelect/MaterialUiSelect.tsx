@@ -6,10 +6,11 @@ import {
     Select,
     MenuItem,
     SelectChangeEvent,
+    Grid,
 } from "@mui/material";
 import { useState } from "react";
 
-const labelStyles = css`
+const labelStyle = css`
     background-color: white;
 `;
 
@@ -21,14 +22,18 @@ const MaterialUiSelect = () => {
     };
 
     return (
-        <FormControl>
-            <InputLabel css={labelStyles}>Fruits</InputLabel>
-            <Select value={value} onChange={handleChange}>
-                <MenuItem value={"Apple"}>Apple</MenuItem>
-                <MenuItem value={"Orange"}>Orange</MenuItem>
-                <MenuItem value={"Pear"}>Pear</MenuItem>
-            </Select>
-        </FormControl>
+        <Grid container justifyContent="center">
+            <Grid item xs={12} md={3}>
+                <FormControl fullWidth>
+                    <InputLabel css={labelStyle}>Fruits</InputLabel>
+                    <Select value={value} onChange={handleChange}>
+                        <MenuItem value={"Apple"}>Apple</MenuItem>
+                        <MenuItem value={"Orange"}>Orange</MenuItem>
+                        <MenuItem value={"Pear"}>Pear</MenuItem>
+                    </Select>
+                </FormControl>
+            </Grid>
+        </Grid>
     );
 };
 

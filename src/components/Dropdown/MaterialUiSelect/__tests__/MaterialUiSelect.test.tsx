@@ -5,7 +5,7 @@ import { MaterialUiSelect } from "../MaterialUiSelect";
 describe("Material UI <Select>", () => {
     afterEach(cleanup);
 
-    it("should render select element on load", () => {
+    it("should render select component on load", () => {
         render(<MaterialUiSelect />);
         const dropdown = screen.getByRole("button");
 
