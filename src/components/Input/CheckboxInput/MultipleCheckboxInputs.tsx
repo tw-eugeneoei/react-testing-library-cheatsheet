@@ -5,11 +5,11 @@ const MultipleCheckboxInputs = () => {
         <>
             <FormGroup>
                 <FormControlLabel
-                    control={<Checkbox checked={true} />}
+                    control={<Checkbox defaultChecked={true} />}
                     label="Subscribe"
                 />
                 <FormControlLabel
-                    control={<Checkbox checked={true} />}
+                    control={<Checkbox defaultChecked={true} />}
                     label="I agree"
                 />
             </FormGroup>

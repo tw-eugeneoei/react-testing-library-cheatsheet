@@ -37,4 +37,20 @@ describe("Multiple checkboxes", () => {
         expect(subsbcribeCheckbox.checked).toBe(true);
         expect(agreeCheckbox.checked).toBe(true);
     });
+
+    it("should all be unchecked when clicked", () => {
+        render(<MultipleCheckboxInputs />);
+        const subsbcribeCheckbox = screen.getByRole("checkbox", {
+            name: /subscribe/i,
+        }) as HTMLInputElement;
+        const agreeCheckbox = screen.getByRole("checkbox", {
+            name: /i agree/i,
+        }) as HTMLInputElement;
+
+        userEvent.click(subsbcribeCheckbox);
+        userEvent.click(agreeCheckbox);
+
+        expect(subsbcribeCheckbox.checked).not.toBe(true);
+        expect(agreeCheckbox.checked).not.toBe(true);
+    });
 });
