@@ -1,5 +1,3 @@
-// import { Select, option } from "@mui/material";
-
 const HtmlSelect = () => {
     return (
         <select>

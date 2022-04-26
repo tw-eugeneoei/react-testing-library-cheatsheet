@@ -1,11 +1,11 @@
 import { Grid } from "@mui/material";
-import { HtmlSelect } from "./components/Dropdown/HtmlSelect//HtmlSelect";
+import { MultipleHtmlSelect } from "./components/Dropdown/HtmlSelect//MultipleHtmlSelect";
 
 function App() {
     return (
         <Grid container justifyContent={"center"}>
             <Grid item xs={12}>
-                <HtmlSelect />
+                <MultipleHtmlSelect />
             </Grid>
         </Grid>
     );
