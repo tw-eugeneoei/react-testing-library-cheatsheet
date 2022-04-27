@@ -10,4 +10,18 @@ body {
 code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
         monospace;
+    background-color: lightgray;
+    padding: 2px 8px;
+    border-radius: 4px;
+    color: mediumvioletred;
+    font-weight: bold;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
 }
