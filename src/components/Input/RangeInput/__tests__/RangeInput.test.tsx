@@ -11,12 +11,4 @@ describe("Range input", () => {
 
         expect(rangeInput).toBeInTheDocument();
     });
-
-    // it("should have a value of 75 on load", () => {
-    //     render(<RangeInput />);
-
-    //     const rangeInput = screen.getByRole("slider") as HTMLInputElement;
-
-    //     expect(rangeInput.value).toBe("75");
-    // });
 });

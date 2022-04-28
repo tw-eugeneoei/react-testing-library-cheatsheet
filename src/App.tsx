@@ -1,30 +1,42 @@
-import { Routes, Route } from "react-router-dom";
-import { PATHS } from "./constants/paths";
-import { Home } from "./pages/Home/Home";
-import { MultipleMaterialUiSelect } from "./components/Dropdown/MaterialUiSelect/MultipleMaterialUiSelect";
-import { MaterialUiSelect } from "./components/Dropdown/MaterialUiSelect/MaterialUiSelect";
-import { HtmlSelect } from "./components/Dropdown/HtmlSelect/HtmlSelect";
-import { MultipleHtmlSelect } from "./components/Dropdown/HtmlSelect/MultipleHtmlSelect";
-import { CheckboxInput } from "./components/Input/CheckboxInput/CheckboxInput";
-import { MultipleCheckboxInputs } from "./components/Input/CheckboxInput/MultipleCheckboxInputs";
-import { ControlledCheckboxInput } from "./components/Input/CheckboxInput/ControlledCheckboxInput";
-import { NumberInput } from "./components/Input/NumberInput/NumberInput";
-import { MultipleNumberInputs } from "./components/Input/NumberInput/MultipleNumberInputs";
-import { RadioInput } from "./components/Input/RadioInput/RadioInput";
-import { MultipleRadioInputs } from "./components/Input/RadioInput/MultipleRadioInputs";
-import { MultipleRadioGroups } from "./components/Input/RadioInput/MultipleRadioGroups";
-import { MultipleControlledRadioInputs } from "./components/Input/RadioInput/MultipleControlledRadioInputs";
-import { TextInput } from "./components/Input/TextInput/TextInput";
-import { MultipleTextInputs } from "./components/Input/TextInput/MultipleTextInputs";
-import { ControlledTextInput } from "./components/Input/TextInput/ControlledTextInput";
-import { RangeInput } from "./components/Input/RangeInput/RangeInput";
+/** @jsxImportSource @emotion/react */
+import { css } from "@emotion/react";
+import { Routes, Route, Navigate, Link } from "react-router-dom";
+// import { PATHS } from "./constants/paths";
+// import { Home } from "./pages/Home/Home";
+// import { MultipleMaterialUiSelect } from "./components/Dropdown/MaterialUiSelect/MultipleMaterialUiSelect";
+// import { MaterialUiSelect } from "./components/Dropdown/MaterialUiSelect/MaterialUiSelect";
+// import { HtmlSelect } from "./components/Dropdown/HtmlSelect/HtmlSelect";
+// import { MultipleHtmlSelect } from "./components/Dropdown/HtmlSelect/MultipleHtmlSelect";
+// import { CheckboxInput } from "./components/Input/CheckboxInput/CheckboxInput";
+// import { MultipleCheckboxInputs } from "./components/Input/CheckboxInput/MultipleCheckboxInputs";
+// import { ControlledCheckboxInput } from "./components/Input/CheckboxInput/ControlledCheckboxInput";
+// import { NumberInput } from "./components/Input/NumberInput/NumberInput";
+// import { MultipleNumberInputs } from "./components/Input/NumberInput/MultipleNumberInputs";
+// import { RadioInput } from "./components/Input/RadioInput/RadioInput";
+// import { MultipleRadioInputs } from "./components/Input/RadioInput/MultipleRadioInputs";
+// import { MultipleRadioGroups } from "./components/Input/RadioInput/MultipleRadioGroups";
+// import { MultipleControlledRadioInputs } from "./components/Input/RadioInput/MultipleControlledRadioInputs";
+// import { TextInput } from "./components/Input/TextInput/TextInput";
+// import { MultipleTextInputs } from "./components/Input/TextInput/MultipleTextInputs";
+// import { ControlledTextInput } from "./components/Input/TextInput/ControlledTextInput";
+// import { RangeInput } from "./components/Input/RangeInput/RangeInput";
+// import { MultipleRangeInput } from "./components/Input/RangeInput/MultipleRangeInput";
+import { Roles } from "./pages/Roles/Roles";
+import { RoleTablistTabTabPanel } from "./pages/Roles/RoleTablistTabTabPanel";
+import { RoleTreeTreeItemGroup } from "./pages/Roles/RoleTreeTreeItemGroup";
+
+const link = css`
+    color: black;
+`;
 
 const App = () => {
     return (
         <div>
-            <h1>React Testing Library Cheatsheet</h1>
+            <Link to="/" css={link}>
+                <h1>React Testing Library Cheatsheet</h1>
+            </Link>
             <Routes>
-                <Route
+                {/* <Route
                     path={PATHS.input.checkbox.single}
                     element={<CheckboxInput />}
                 />
@@ -74,6 +86,10 @@ const App = () => {
                     element={<RangeInput />}
                 />
                 <Route
+                    path={PATHS.input.range.multiple}
+                    element={<MultipleRangeInput />}
+                />
+                <Route
                     path={PATHS.dropdown.native.single}
                     element={<HtmlSelect />}
                 />
@@ -89,7 +105,17 @@ const App = () => {
                     path={PATHS.dropdown.materialUi.multiple}
                     element={<MultipleMaterialUiSelect />}
                 />
-                <Route path="/" element={<Home />} />
+                <Route path="/" element={<Home />} />*/}
+                <Route
+                    path="/roles/tablist-tab-tabpanel"
+                    element={<RoleTablistTabTabPanel />}
+                />
+                <Route
+                    path="/roles/tree-treeitem-group"
+                    element={<RoleTreeTreeItemGroup />}
+                />
+                <Route path="/" element={<Roles />} />
+                <Route path="*" element={<Navigate to="/" replace />}></Route>
             </Routes>
         </div>
     );

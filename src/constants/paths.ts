@@ -17,6 +17,7 @@ const PATHS = {
         },
         range: {
             single: "/input/range/single",
+            multiple: "/input/range/multiple",
         },
         text: {
             single: "/input/text/single",

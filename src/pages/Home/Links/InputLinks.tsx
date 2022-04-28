@@ -107,12 +107,12 @@ const InputLinks = () => {
                                 Single range <code>input</code>
                             </Link>
                         </Grid>
-                        {/* <Grid item component={"li"} css={nestedList}>
-                            <Link to={PATHS.input.text.multiple}>
-                                Mltiple text <code>input</code>
+                        <Grid item component={"li"} css={nestedList}>
+                            <Link to={PATHS.input.range.multiple}>
+                                Mltiple range <code>input</code>
                             </Link>
                         </Grid>
-                        <Grid item component={"li"} css={nestedList}>
+                        {/* <Grid item component={"li"} css={nestedList}>
                             <Link to={PATHS.input.text.controlled}>
                                 Controlled text <code>input</code>
                             </Link>
