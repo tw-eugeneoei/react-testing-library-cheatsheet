@@ -34,6 +34,10 @@ const image = css`
     width: 100%;
 `;
 
+const emoticon = css`
+    font-size: 30px;
+`;
+
 type WrapperProps = {
     children: ReactNode;
 };
@@ -113,15 +117,15 @@ const Roles = () => {
             </Wrapper>
             <Wrapper>
                 <h3>"menuitem"</h3>
-                <p>TODO</p>
+                <p css={emoticon}>&#x1F937;</p>
             </Wrapper>
             <Wrapper>
                 <h3 css={heading}>"menuitemcheckbox"</h3>
-                <p>TODO</p>
+                <p css={emoticon}>&#x1F937;</p>
             </Wrapper>
             <Wrapper>
                 <h3 css={heading}>"menuitemradio"</h3>
-                <p>TODO</p>
+                <p css={emoticon}>&#x1F937;</p>
             </Wrapper>
             <Wrapper>
                 <h3>
@@ -436,11 +440,6 @@ const Roles = () => {
                         Click me to open dialog
                     </button>
                 </Box>
-                {/* <Box m={2}>
-                    <Alert severity="error" aria-label="alert-error">
-                        This is an error alert — check it out!
-                    </Alert>
-                </Box> */}
                 <RoleDialog
                     isOpen={isDialogOpen}
                     closeDialog={handleCloseDialog}
@@ -449,13 +448,9 @@ const Roles = () => {
                     <p>
                         No native HTML element with this role. In this example,
                         using Material UI's <code>&lt;Dialog&gt;</code>{" "}
-                        component where the role "dialog" is applied.
+                        component where the role "dialog" is applied. Similar
+                        application in Bootstrap
                     </p>
-                    {/* <p>
-                        Give <code>&lt;Alert&gt;</code> component an
-                        "aria-label" attribute allows querying an "alert" role
-                        by its "name".
-                    </p> */}
                 </Box>
             </Wrapper>
         </Grid>
