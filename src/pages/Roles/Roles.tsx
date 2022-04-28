@@ -1,6 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
-import { Grid, Box, Switch } from "@mui/material";
+import { Grid, Box, Switch, Tooltip, IconButton } from "@mui/material";
+import DeleteIcon from "@mui/icons-material/Delete";
 import { ReactNode } from "react";
 import { Link } from "react-router-dom";
 
@@ -198,8 +199,8 @@ const Roles = () => {
                 <Switch role="switch" />
                 <Box m={2}>
                     <p>
-                        There is no native "switch" element. Switches we know of
-                        in Material UI (inspect switch in{" "}
+                        No native HTML element with this role. Switches we know
+                        of in Material UI (inspect switch in{" "}
                         <a
                             href="https://mui.com/material-ui/react-switch/#basic-switches"
                             target="_blank"
@@ -371,6 +372,24 @@ const Roles = () => {
                 <article aria-label="Article Name">
                     <p>This is some article.</p>
                 </article>
+            </Wrapper>
+            <Wrapper>
+                <h3>"tooltip"</h3>
+                <code>&lt;Tooltip&gt;</code>
+                <p>
+                    <Tooltip title="Delete">
+                        <IconButton>
+                            <DeleteIcon />
+                        </IconButton>
+                    </Tooltip>
+                </p>
+                <Box m={2}>
+                    <p>
+                        No native HTML element with this role. In this example,
+                        using Material UI's <code>&lt;Tooltip&gt;</code>{" "}
+                        component.
+                    </p>
+                </Box>
             </Wrapper>
         </Grid>
     );

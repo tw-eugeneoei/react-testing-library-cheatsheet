@@ -1,4 +1,5 @@
 import { render, screen, cleanup } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 import { BrowserRouter } from "react-router-dom";
 import { Roles } from "../Roles";
 
@@ -8,7 +9,9 @@ describe("Roles", () => {
     describe("button", () => {
         it("should exist on load", () => {
             render(<Roles />, { wrapper: BrowserRouter });
-            const button = screen.getByRole("button");
+            const button = screen.getByRole("button", {
+                name: 'Button'
+            });
             expect(button).toBeInTheDocument();
         });
     });
@@ -216,6 +219,22 @@ describe("Roles", () => {
             });
 
             expect(article).toBeInTheDocument();
+        });
+    });
+
+    describe("tooltip", () => {
+        it("should exist when hover over bin icon", async () => {
+            render(<Roles />, { wrapper: BrowserRouter });
+            const button = screen.getByRole("button", {
+                name: "Delete",
+            });
+
+            userEvent.hover(button);
+            const tooltip = await screen.findByRole("tooltip", {
+                name: "Delete",
+            });
+
+            expect(tooltip).toBeInTheDocument();
         });
     });
 });
