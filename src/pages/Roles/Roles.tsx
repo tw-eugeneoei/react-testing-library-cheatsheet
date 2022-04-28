@@ -68,8 +68,14 @@ const Roles = () => {
                 <input id="checkbox" type="checkbox" />
             </Wrapper>
             <Wrapper>
-                <h3>"gridcell"</h3>
-                <p>TODO</p>
+                <h3>"grid", "gridcell"</h3>
+                <Box m={2}>
+                    <p>
+                        No native HTML elements with these roles. These roles
+                        can be assigned when you are trying to recreate
+                        something like Excel.
+                    </p>
+                </Box>
             </Wrapper>
             <Wrapper>
                 <h3>"link"</h3>
@@ -122,6 +128,19 @@ const Roles = () => {
                     <code>&lt;input type="radio"&gt;</code>
                 </p>
                 <input type="radio" />
+            </Wrapper>
+            <Wrapper>
+                <h3>"radiogroup"</h3>
+                <Box m={2}>
+                    <p>
+                        No native HTML element with this role. Assigned to a
+                        wrapper element to group radio buttons together.
+                    </p>
+                    <p>
+                        See <Link to="/roles/radiogroup">this</Link> sample code
+                        taken from Material UI.
+                    </p>
+                </Box>
             </Wrapper>
             <Wrapper>
                 <h3>"scrollbar"</h3>

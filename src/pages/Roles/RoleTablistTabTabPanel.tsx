@@ -12,6 +12,10 @@ interface TabPanelProps {
     value: number;
 }
 
+const tabPanel = css`
+    text-transform: unset;
+`;
+
 function TabPanel(props: TabPanelProps) {
     const { children, value, index, ...other } = props;
 
@@ -71,19 +75,19 @@ const RoleTablistTabTabPanel = () => {
                     onChange={handleChange}
                     aria-label="basic tabs example"
                 >
-                    <Tab label="Tabpanel One" {...a11yProps(0)} />
-                    <Tab label="Item Two" {...a11yProps(1)} />
-                    <Tab label="Item Three" {...a11yProps(2)} />
+                    <Tab label="Tab One" {...a11yProps(0)} css={tabPanel} />
+                    <Tab label="Tab Two" {...a11yProps(1)} css={tabPanel} />
+                    <Tab label="Tab Three" {...a11yProps(2)} css={tabPanel} />
                 </Tabs>
             </Box>
             <TabPanel value={value} index={0}>
-                This is tabpanel content One
+                Hello world
             </TabPanel>
             <TabPanel value={value} index={1}>
-                This is tabpanel content Two
+                Lorem ipsum
             </TabPanel>
             <TabPanel value={value} index={2}>
-                This is tabpanel content Three
+                Avengersssss....assemble
             </TabPanel>
             <hr></hr>
             <Grid container spacing={3}>

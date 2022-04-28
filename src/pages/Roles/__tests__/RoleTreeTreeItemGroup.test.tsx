@@ -2,7 +2,7 @@ import { render, screen, cleanup, within } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { RoleTreeTreeItemGroup } from "../RoleTreeTreeItemGroup";
 
-describe("Roles", () => {
+describe("tree, treeitem and group", () => {
     afterEach(cleanup);
 
     describe("tree and treeitem", () => {
@@ -10,14 +10,9 @@ describe("Roles", () => {
             render(<RoleTreeTreeItemGroup />);
             const tree = screen.getByRole("tree");
             const treeitems = screen.getAllByRole("treeitem");
-            // const tabPanelOne = screen.getByRole("tabpanel", {
-            //     name: "Tabpanel One",
-            // });
 
             expect(tree).toBeInTheDocument();
             expect(treeitems.length).toBe(2);
-            // expect(tabs.length).toBe(3);
-            // expect(tabPanelOne).toBeInTheDocument();
         });
     });
 

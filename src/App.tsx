@@ -1,6 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
 import { Routes, Route, Navigate, Link } from "react-router-dom";
+
 // import { PATHS } from "./constants/paths";
 // import { Home } from "./pages/Home/Home";
 // import { MultipleMaterialUiSelect } from "./components/Dropdown/MaterialUiSelect/MultipleMaterialUiSelect";
@@ -24,6 +25,7 @@ import { Routes, Route, Navigate, Link } from "react-router-dom";
 import { Roles } from "./pages/Roles/Roles";
 import { RoleTablistTabTabPanel } from "./pages/Roles/RoleTablistTabTabPanel";
 import { RoleTreeTreeItemGroup } from "./pages/Roles/RoleTreeTreeItemGroup";
+import { RoleRadioGroup } from "./pages/Roles/RoleRadioGroup";
 
 const link = css`
     color: black;
@@ -114,6 +116,7 @@ const App = () => {
                     path="/roles/tree-treeitem-group"
                     element={<RoleTreeTreeItemGroup />}
                 />
+                <Route path="/roles/radiogroup" element={<RoleRadioGroup />} />
                 <Route path="/" element={<Roles />} />
                 <Route path="*" element={<Navigate to="/" replace />}></Route>
             </Routes>
