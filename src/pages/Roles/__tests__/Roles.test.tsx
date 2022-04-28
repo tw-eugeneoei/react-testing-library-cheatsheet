@@ -207,4 +207,15 @@ describe("Roles", () => {
             expect(headingSix).toBeInTheDocument();
         });
     });
+
+    describe("article", () => {
+        it("should exist on load", () => {
+            render(<Roles />, { wrapper: BrowserRouter });
+            const article = screen.getByRole("article", {
+                name: "Article Name",
+            });
+
+            expect(article).toBeInTheDocument();
+        });
+    });
 });

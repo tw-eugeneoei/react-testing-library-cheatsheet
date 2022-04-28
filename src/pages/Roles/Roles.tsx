@@ -249,8 +249,8 @@ const Roles = () => {
                 <h3>"tree", "treeitem" & "group"</h3>
                 <Box m={2}>
                     <p>
-                        There is no native "tree", "treeitem" and "group"
-                        elements. These roles are assigned.
+                        No native HTML elements corresponds to these roles.
+                        These are assigned.
                     </p>
                     <p>
                         See <Link to="/roles/tree-treeitem-group">this</Link>{" "}
@@ -355,6 +355,22 @@ const Roles = () => {
                 <h4>heading 4</h4>
                 <h5>heading 5</h5>
                 <h6>heading 6</h6>
+            </Wrapper>
+            <Wrapper>
+                <h3>"article"</h3>
+                <p>
+                    <code>&lt;article&gt;</code>
+                </p>
+                <Box m={2}>
+                    <p>
+                        Give <code>&lt;article&gt;</code> element an
+                        "aria-label" attribute allows querying an "article" role
+                        by its "name".
+                    </p>
+                </Box>
+                <article aria-label="Article Name">
+                    <p>This is some article.</p>
+                </article>
             </Wrapper>
         </Grid>
     );
