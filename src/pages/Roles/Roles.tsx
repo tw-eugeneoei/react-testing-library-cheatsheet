@@ -75,6 +75,17 @@ const Roles = () => {
                         can be assigned when you are trying to recreate
                         something like Excel.
                     </p>
+                    <p>
+                        Seems to be what{" "}
+                        <a
+                            href="https://www.ag-grid.com/"
+                            target="_blank"
+                            rel="noreferrer"
+                        >
+                            AG Grid
+                        </a>{" "}
+                        is doing.
+                    </p>
                 </Box>
             </Wrapper>
             <Wrapper>
@@ -211,8 +222,8 @@ const Roles = () => {
                 </Box>
             </Wrapper>
             <Wrapper>
+                <h3>"tablist", "tab" & "tabpanel"</h3>
                 <Box m={2}>
-                    <h3>"tablist", "tab" & "tabpanel"</h3>
                     <p>
                         There is no native "tablist", "tab" and "tabpanel"
                         elements. These roles are assigned.
@@ -231,8 +242,8 @@ const Roles = () => {
                 <input type="text" />
             </Wrapper>
             <Wrapper>
+                <h3>"tree", "treeitem" & "group"</h3>
                 <Box m={2}>
-                    <h3>"tree", "treeitem" & "group"</h3>
                     <p>
                         There is no native "tree", "treeitem" and "group"
                         elements. These roles are assigned.
@@ -242,6 +253,60 @@ const Roles = () => {
                         sample code taken from Material UI.
                     </p>
                 </Box>
+            </Wrapper>
+            <Wrapper>
+                <h3>"table"</h3>
+                <p>
+                    <code>&lt;table&gt;</code>
+                </p>
+            </Wrapper>
+            <Wrapper>
+                <h3>"rowgroup"</h3>
+                <Box m={2}>
+                    <p>
+                        Encompases <code>&lt;thead&gt;</code>,{" "}
+                        <code>&lt;tbody&gt;</code> and{" "}
+                        <code>&lt;tfoot&gt;</code>. Read{" "}
+                        <a
+                            href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/rowgroup_role#description"
+                            target="_blank"
+                            rel="noreferrer"
+                        >
+                            this
+                        </a>{" "}
+                        section of MDN.
+                    </p>
+                </Box>
+            </Wrapper>
+            <Wrapper>
+                <h3>"row"</h3>
+                <p>
+                    <code>&lt;tr&gt;</code>
+                </p>
+                <Box m={2}>
+                    <p>
+                        Its textContent returns a concatenated string of all
+                        values in the row separated by spaces.
+                    </p>
+                </Box>
+            </Wrapper>
+            <Wrapper>
+                <h3>"rowheader"</h3>
+                <p>
+                    <code>&lt;th scope="row"&gt;</code>
+                </p>
+            </Wrapper>
+            <Wrapper>
+                <h3>"columnheader"</h3>
+                <p>
+                    <code>&lt;th&gt;</code>
+                </p>
+            </Wrapper>
+            <Wrapper>
+                <h3>"cell"</h3>
+                <p>
+                    <code>&lt;td&gt;</code>
+                </p>
             </Wrapper>
         </Grid>
     );

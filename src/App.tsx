@@ -26,6 +26,7 @@ import { Roles } from "./pages/Roles/Roles";
 import { RoleTablistTabTabPanel } from "./pages/Roles/RoleTablistTabTabPanel";
 import { RoleTreeTreeItemGroup } from "./pages/Roles/RoleTreeTreeItemGroup";
 import { RoleRadioGroup } from "./pages/Roles/RoleRadioGroup";
+import { RoleTable } from "./pages/Roles/RoleTable";
 
 const link = css`
     color: black;
@@ -117,6 +118,7 @@ const App = () => {
                     element={<RoleTreeTreeItemGroup />}
                 />
                 <Route path="/roles/radiogroup" element={<RoleRadioGroup />} />
+                <Route path="/roles/table" element={<RoleTable />} />
                 <Route path="/" element={<Roles />} />
                 <Route path="*" element={<Navigate to="/" replace />}></Route>
             </Routes>
