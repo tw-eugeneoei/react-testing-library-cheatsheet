@@ -165,4 +165,15 @@ describe("Roles", () => {
             expect(figure).toBeInTheDocument();
         });
     });
+
+    describe("img", () => {
+        it("should exist on load", () => {
+            render(<Roles />, { wrapper: BrowserRouter });
+            // * if there are multiple images in UI, access by name which corresponds to the "alt" value
+            const img = screen.getByRole("img", {
+                name: "oh that is why",
+            });
+            expect(img).toBeInTheDocument();
+        });
+    });
 });
