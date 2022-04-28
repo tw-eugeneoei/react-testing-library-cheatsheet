@@ -1,4 +1,9 @@
-import { render, screen, cleanup } from "@testing-library/react";
+import {
+    render,
+    screen,
+    cleanup,
+    waitForElementToBeRemoved,
+} from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { BrowserRouter } from "react-router-dom";
 import { Roles } from "../Roles";
@@ -10,7 +15,7 @@ describe("Roles", () => {
         it("should exist on load", () => {
             render(<Roles />, { wrapper: BrowserRouter });
             const button = screen.getByRole("button", {
-                name: 'Button'
+                name: "Button",
             });
             expect(button).toBeInTheDocument();
         });
@@ -235,6 +240,47 @@ describe("Roles", () => {
             });
 
             expect(tooltip).toBeInTheDocument();
+        });
+    });
+
+    describe("alert", () => {
+        it("should exist on load", () => {
+            render(<Roles />, { wrapper: BrowserRouter });
+            const alert = screen.getByRole("alert", {
+                name: "alert-error",
+            });
+
+            expect(alert).toBeInTheDocument();
+        });
+    });
+
+    describe("dialog", () => {
+        it("should be open when open dialog button is clicked", async () => {
+            render(<Roles />, { wrapper: BrowserRouter });
+            const button = screen.getByRole("button", {
+                name: "Click me to open dialog",
+            });
+
+            userEvent.click(button);
+            const dialog = await screen.findByRole("dialog");
+
+            expect(dialog).toBeInTheDocument();
+        });
+
+        it("should close dialog when close button is clicked", async () => {
+            render(<Roles />, { wrapper: BrowserRouter });
+            const openDialogButton = screen.getByRole("button", {
+                name: "Click me to open dialog",
+            });
+
+            userEvent.click(openDialogButton);
+            const closeDialogButton = await screen.findByRole("button", {
+                name: "close",
+            });
+            userEvent.click(closeDialogButton);
+            await waitForElementToBeRemoved(screen.queryByRole("dialog"));
+
+            expect(screen.queryByRole("dialog")).not.toBeInTheDocument();
         });
     });
 });

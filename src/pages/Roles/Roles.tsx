@@ -1,9 +1,10 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
-import { Grid, Box, Switch, Tooltip, IconButton } from "@mui/material";
+import { Grid, Box, Switch, Tooltip, IconButton, Alert } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
-import { ReactNode } from "react";
+import { ReactNode, useState } from "react";
 import { Link } from "react-router-dom";
+import { RoleDialog } from "./RoleDialog";
 
 const root = css`
     text-align: center;
@@ -48,6 +49,16 @@ const Wrapper = (props: WrapperProps) => {
 };
 
 const Roles = () => {
+    const [isDialogOpen, setIsDialogOpen] = useState<boolean>(false);
+
+    const handleOpenDialog = () => {
+        setIsDialogOpen(true);
+    };
+
+    const handleCloseDialog = () => {
+        setIsDialogOpen(false);
+    };
+
     return (
         <Grid container spacing={2} css={root}>
             <Grid item xs={12}>
@@ -389,6 +400,62 @@ const Roles = () => {
                         using Material UI's <code>&lt;Tooltip&gt;</code>{" "}
                         component.
                     </p>
+                    <p>
+                        On hover, a <code>&lt;div role="tooltip"&gt;</code> is
+                        added to the DOM. The same applies with Boostrap.
+                    </p>
+                </Box>
+            </Wrapper>
+            <Wrapper>
+                <h3>"alert"</h3>
+                <code>&lt;Alert&gt;</code>
+                <Box m={2}>
+                    <Alert severity="error" aria-label="alert-error">
+                        This is an error alert — check it out!
+                    </Alert>
+                </Box>
+                <Box m={2}>
+                    <p>
+                        No native HTML element with this role. In this example,
+                        using Material UI's <code>&lt;Alert&gt;</code> component
+                        where it is a <code>&lt;div&gt;</code> element with the
+                        role "alert". The same applies in bootstrap.
+                    </p>
+                    <p>
+                        Give <code>&lt;Alert&gt;</code> component an
+                        "aria-label" attribute allows querying an "alert" role
+                        by its "name".
+                    </p>
+                </Box>
+            </Wrapper>
+            <Wrapper>
+                <h3>"dialog"</h3>
+                <code>&lt;Dialog&gt;</code>
+                <Box m={2}>
+                    <button onClick={handleOpenDialog}>
+                        Click me to open dialog
+                    </button>
+                </Box>
+                {/* <Box m={2}>
+                    <Alert severity="error" aria-label="alert-error">
+                        This is an error alert — check it out!
+                    </Alert>
+                </Box> */}
+                <RoleDialog
+                    isOpen={isDialogOpen}
+                    closeDialog={handleCloseDialog}
+                />
+                <Box m={2}>
+                    <p>
+                        No native HTML element with this role. In this example,
+                        using Material UI's <code>&lt;Dialog&gt;</code>{" "}
+                        component where the role "dialog" is applied.
+                    </p>
+                    {/* <p>
+                        Give <code>&lt;Alert&gt;</code> component an
+                        "aria-label" attribute allows querying an "alert" role
+                        by its "name".
+                    </p> */}
                 </Box>
             </Wrapper>
         </Grid>
