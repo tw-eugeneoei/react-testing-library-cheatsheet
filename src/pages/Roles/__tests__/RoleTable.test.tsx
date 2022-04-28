@@ -11,9 +11,6 @@ describe("table", () => {
                 name: "Table One",
             });
 
-            // const rowheader = screen.getByRole("rowheader", { name: "Group1" });
-            // expect(rowheader).toBeVisible();
-
             // * encompasses thead, tbody and tfoot
             // const rowgroup = screen.getByRole("rowgroup");
 

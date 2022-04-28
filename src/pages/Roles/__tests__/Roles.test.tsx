@@ -156,18 +156,13 @@ describe("Roles", () => {
         });
     });
 
-    // describe("tree", () => {
-    //     it("should exist on load", () => {
-    //         render(<Roles />, { wrapper: BrowserRouter });
-    //         const tree = screen.getByRole("tree");
-    //         // const firstOption = options[0] as HTMLOptionElement;
-    //         // const secondOption = options[1] as HTMLOptionElement;
-    //         // const thirdOption = options[2] as HTMLOptionElement;
-
-    //         expect(tree).toBeInTheDocument();
-    //         // expect(firstOption.value).toBe("Apple");
-    //         // expect(secondOption.value).toBe("Orange");
-    //         // expect(thirdOption.value).toBe("Pear");
-    //     });
-    // });
+    describe("figure", () => {
+        it("should exist on load", () => {
+            render(<Roles />, { wrapper: BrowserRouter });
+            const figure = screen.getByRole("figure", {
+                name: "Programmer",
+            });
+            expect(figure).toBeInTheDocument();
+        });
+    });
 });

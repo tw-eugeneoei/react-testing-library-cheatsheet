@@ -28,6 +28,10 @@ const inputSpinButton = css`
     }
 `;
 
+const image = css`
+    width: 100%;
+`;
+
 type WrapperProps = {
     children: ReactNode;
 };
@@ -307,6 +311,20 @@ const Roles = () => {
                 <p>
                     <code>&lt;td&gt;</code>
                 </p>
+            </Wrapper>
+            <Wrapper>
+                <h3>"figure"</h3>
+                <p>
+                    <code>&lt;figure&gt;</code>
+                </p>
+                <figure aria-label="Programmer">
+                    <img
+                        src="https://img.devrant.com/devrant/rant/r_1973724_9QTSY.jpg"
+                        alt="programmer"
+                        css={image}
+                    />
+                    <figcaption>This is a joke</figcaption>
+                </figure>
             </Wrapper>
         </Grid>
     );
