@@ -1,10 +1,8 @@
-import { render, screen, cleanup } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { MultipleRangeInput } from "../MultipleRangeInput";
 
 describe("Multiple range input", () => {
-    afterEach(cleanup);
-
     it("should render 2 range input on load", () => {
         render(<MultipleRangeInput />);
         const rangeInputs = screen.getAllByRole("slider");

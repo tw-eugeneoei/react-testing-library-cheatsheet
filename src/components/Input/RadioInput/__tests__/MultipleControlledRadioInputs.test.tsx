@@ -1,10 +1,8 @@
-import { render, screen, cleanup } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { MultipleControlledRadioInputs } from "../MultipleControlledRadioInputs";
 
 describe("Multiple controlled radio inputs", () => {
-    afterEach(cleanup);
-
     it("should all be unchecked on load", () => {
         render(<MultipleControlledRadioInputs />);
         const consultantRadio = screen.getByRole("radio", {

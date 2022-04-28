@@ -1,10 +1,8 @@
-import { render, screen, cleanup } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { RoleTablistTabTabPanel } from "../RoleTablistTabTabPanel";
 
 describe("tablist, tab and tabPanel", () => {
-    afterEach(cleanup);
-
     it("should exist on load", () => {
         render(<RoleTablistTabTabPanel />);
         const tablist = screen.getByRole("tablist");

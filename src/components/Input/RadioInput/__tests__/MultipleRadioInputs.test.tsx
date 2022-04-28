@@ -1,10 +1,8 @@
-import { render, screen, cleanup } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { MultipleRadioInputs } from "../MultipleRadioInputs";
 
 describe("Multiple radio inputs", () => {
-    afterEach(cleanup);
-
     it("should render 2 radio inputs on load", () => {
         render(<MultipleRadioInputs />);
         const radios = screen.getAllByRole("radio");

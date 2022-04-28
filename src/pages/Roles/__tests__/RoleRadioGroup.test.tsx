@@ -1,9 +1,7 @@
-import { render, screen, cleanup, within } from "@testing-library/react";
+import { render, screen, within } from "@testing-library/react";
 import { RoleRadioGroup } from "../RoleRadioGroup";
 
 describe("radiogroup", () => {
-    afterEach(cleanup);
-
     it("should exist on load", () => {
         render(<RoleRadioGroup />);
         const radioGroup = screen.getByRole("radiogroup");

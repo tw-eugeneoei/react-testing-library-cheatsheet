@@ -1,7 +1,6 @@
 import {
     render,
     screen,
-    cleanup,
     waitForElementToBeRemoved,
 } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
@@ -9,8 +8,6 @@ import { BrowserRouter } from "react-router-dom";
 import { Roles } from "../Roles";
 
 describe("Roles", () => {
-    afterEach(cleanup);
-
     describe("button", () => {
         it("should exist on load", () => {
             render(<Roles />, { wrapper: BrowserRouter });

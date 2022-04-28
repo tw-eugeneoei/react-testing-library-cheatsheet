@@ -1,10 +1,8 @@
-import { render, screen, cleanup } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { HtmlSelect } from "../HtmlSelect";
 
 describe("HTML <select> element", () => {
-    afterEach(cleanup);
-
     it("should render select element on load", () => {
         render(<HtmlSelect />);
         const dropdown = screen.getByRole("combobox") as HTMLSelectElement;

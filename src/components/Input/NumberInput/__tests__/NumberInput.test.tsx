@@ -1,10 +1,8 @@
-import { render, screen, cleanup } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { NumberInput } from "../NumberInput";
 
 describe("Number input", () => {
-    afterEach(cleanup);
-
     it("should render number input element on load", () => {
         render(<NumberInput />);
 

@@ -1,9 +1,7 @@
-import { render, screen, cleanup } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import { RangeInput } from "../RangeInput";
 
 describe("Range input", () => {
-    afterEach(cleanup);
-
     it("should render range input on load", () => {
         render(<RangeInput />);
 

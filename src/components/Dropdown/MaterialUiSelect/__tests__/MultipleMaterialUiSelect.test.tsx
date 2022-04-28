@@ -1,10 +1,8 @@
-import { render, screen, cleanup } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { MultipleMaterialUiSelect } from "../MultipleMaterialUiSelect";
 
 describe("Multiple Material UI <Select>", () => {
-    afterEach(cleanup);
-
     it("should render day, month and year dropdown components on load", () => {
         render(<MultipleMaterialUiSelect />);
         // Material UI default Select component

@@ -1,9 +1,7 @@
-import { render, screen, cleanup } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import { MultipleRadioGroups } from "../MultipleRadioGroups";
 
 describe("Multiple radio groups", () => {
-    afterEach(cleanup);
-
     it("should render 2 groups of radio buttons", () => {
         render(<MultipleRadioGroups />);
         const radioGroups = screen.getAllByRole("radiogroup");

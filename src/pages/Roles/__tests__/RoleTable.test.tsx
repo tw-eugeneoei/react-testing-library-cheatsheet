@@ -1,9 +1,7 @@
-import { render, screen, cleanup, within } from "@testing-library/react";
+import { render, screen, within } from "@testing-library/react";
 import { RoleTable } from "../RoleTable";
 
 describe("table", () => {
-    afterEach(cleanup);
-
     describe("table one", () => {
         it("should exist on load", () => {
             render(<RoleTable />);

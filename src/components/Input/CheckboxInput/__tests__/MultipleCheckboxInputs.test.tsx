@@ -1,10 +1,8 @@
-import { render, screen, cleanup } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { MultipleCheckboxInputs } from "../MultipleCheckboxInputs";
 
 describe("Multiple checkboxes", () => {
-    afterEach(cleanup);
-
     it("should 2 checkboxes on load", () => {
         render(<MultipleCheckboxInputs />);
         const checkboxes = screen.getAllByRole("checkbox");

@@ -1,9 +1,7 @@
-import { render, screen, cleanup } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import { MultipleNumberInputs } from "../MultipleNumberInputs";
 
 describe("Multiple number inputs", () => {
-    afterEach(cleanup);
-
     it("should contain 2 number input elements", () => {
         render(<MultipleNumberInputs />);
 

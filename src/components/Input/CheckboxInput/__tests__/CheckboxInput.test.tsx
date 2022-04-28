@@ -1,10 +1,8 @@
-import { render, screen, cleanup } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { CheckboxInput } from "../CheckboxInput";
 
 describe("Checkbox", () => {
-    afterEach(cleanup);
-
     it("should render checkbox on load", () => {
         render(<CheckboxInput />);
         const checkbox = screen.getByRole("checkbox") as HTMLInputElement;

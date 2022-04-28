@@ -1,10 +1,8 @@
-import { render, screen, cleanup, within } from "@testing-library/react";
+import { render, screen, within } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { RoleTreeTreeItemGroup } from "../RoleTreeTreeItemGroup";
 
 describe("tree, treeitem and group", () => {
-    afterEach(cleanup);
-
     describe("tree and treeitem", () => {
         it("should exist on load", () => {
             render(<RoleTreeTreeItemGroup />);

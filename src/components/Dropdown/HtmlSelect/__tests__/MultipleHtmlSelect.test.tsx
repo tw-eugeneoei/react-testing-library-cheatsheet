@@ -1,10 +1,8 @@
-import { render, screen, cleanup } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { MultipleHtmlSelect } from "../MultipleHtmlSelect";
 
 describe("Multiple HTML <select> elements", () => {
-    afterEach(cleanup);
-
     it("should render 3 dropdown elements on load", () => {
         render(<MultipleHtmlSelect />);
         const selectElements = screen.getAllByRole("combobox");
