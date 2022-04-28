@@ -340,6 +340,22 @@ const Roles = () => {
                     <figcaption>Programmers while reviewing code</figcaption>
                 </figure>
             </Wrapper>
+            <Wrapper>
+                <h3>"heading"</h3>
+                <Box m={2}>
+                    <p>
+                        <code>&lt;h1&gt;</code>, <code>&lt;h2&gt;</code>,{" "}
+                        <code>&lt;h3&gt;</code>, <code>&lt;h4&gt;</code>,{" "}
+                        <code>&lt;h5&gt;</code>, <code>&lt;h6&gt;</code>
+                    </p>
+                </Box>
+                <h1>heading 1</h1>
+                <h2>heading 2</h2>
+                <h3>heading 3</h3>
+                <h4>heading 4</h4>
+                <h5>heading 5</h5>
+                <h6>heading 6</h6>
+            </Wrapper>
         </Grid>
     );
 };

@@ -176,4 +176,35 @@ describe("Roles", () => {
             expect(img).toBeInTheDocument();
         });
     });
+
+    describe("heading", () => {
+        it("should exist on load", () => {
+            render(<Roles />, { wrapper: BrowserRouter });
+            const headingOne = screen.getByRole("heading", {
+                name: "heading 1",
+            });
+            const headingTwo = screen.getByRole("heading", {
+                name: "heading 2",
+            });
+            const headingThree = screen.getByRole("heading", {
+                name: "heading 3",
+            });
+            const headingFour = screen.getByRole("heading", {
+                name: "heading 4",
+            });
+            const headingFive = screen.getByRole("heading", {
+                name: "heading 5",
+            });
+            const headingSix = screen.getByRole("heading", {
+                name: "heading 6",
+            });
+
+            expect(headingOne).toBeInTheDocument();
+            expect(headingTwo).toBeInTheDocument();
+            expect(headingThree).toBeInTheDocument();
+            expect(headingFour).toBeInTheDocument();
+            expect(headingFive).toBeInTheDocument();
+            expect(headingSix).toBeInTheDocument();
+        });
+    });
 });
