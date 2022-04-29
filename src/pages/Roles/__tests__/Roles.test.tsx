@@ -153,13 +153,23 @@ describe("Roles", () => {
         });
     });
 
-    describe("textbox", () => {
+    describe("textbox without declaration", () => {
         it("should exist on load", () => {
             render(<Roles />, { wrapper: BrowserRouter });
             const textbox = screen.getByRole("textbox");
+
             expect(textbox).toBeInTheDocument();
         });
     });
+
+    // describe("textbox", () => {
+    //     it("should have value 'Hello World!'", () => {
+    //         render(<Roles />, { wrapper: BrowserRouter });
+    //         const textbox = screen.getByRole("textbox") as HTMLInputElement;
+
+    //         expect(textbox.value).toBe("Hello world!");
+    //     });
+    // });
 
     describe("figure", () => {
         it("should exist on load", () => {

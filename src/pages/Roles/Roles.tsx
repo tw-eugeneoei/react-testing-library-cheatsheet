@@ -75,6 +75,7 @@ const Roles = () => {
             <Wrapper>
                 <h3>"button"</h3>
                 <p>
+                    <code>&lt;button&gt;</code> or{" "}
                     <code>&lt;input type="button"&gt;</code>
                 </p>
                 <button>Button</button>
@@ -452,6 +453,14 @@ const Roles = () => {
                         application in Bootstrap
                     </p>
                 </Box>
+            </Wrapper>
+            <Wrapper>
+                <h3>"navigation"</h3>
+                <code>&lt;nav&gt;</code>
+            </Wrapper>
+            <Wrapper>
+                <h3>"form"</h3>
+                <code>&lt;form&gt;</code>
             </Wrapper>
         </Grid>
     );
