@@ -183,7 +183,10 @@ const Roles = () => {
                 <p>
                     <code>&lt;input type="search"&gt;</code>
                 </p>
-                <input type="search" />
+                <Box>
+                    <label htmlFor="search-me">Search me</label>
+                    <input id="search-me" type="search" />
+                </Box>
             </Wrapper>
             <Wrapper>
                 <h3>"separator"</h3>
@@ -260,7 +263,10 @@ const Roles = () => {
                 <p>
                     <code>&lt;input type="text"&gt;</code>
                 </p>
-                <input type="text" />
+                <Box>
+                    <label htmlFor="name">Name</label>
+                    <input id="name" type="text" />
+                </Box>
             </Wrapper>
             <Wrapper>
                 <h3>"tree", "treeitem" & "group"</h3>
@@ -457,10 +463,61 @@ const Roles = () => {
             <Wrapper>
                 <h3>"navigation"</h3>
                 <code>&lt;nav&gt;</code>
+                <Box
+                    m={2}
+                    sx={{
+                        border: "1px solid black",
+                        padding: "4px",
+                    }}
+                >
+                    <nav>This is a navigation bar</nav>
+                </Box>
             </Wrapper>
             <Wrapper>
                 <h3>"form"</h3>
-                <code>&lt;form&gt;</code>
+                <code>&lt;form aria-label="form name"&gt;</code>
+                <Box
+                    m={2}
+                    sx={{
+                        borderBottom: "1px solid black",
+                    }}
+                >
+                    <h4>Login form</h4>
+                    <form
+                        aria-label="login form"
+                        onSubmit={(e) => e.preventDefault()}
+                    >
+                        <p>
+                            <label htmlFor="email">Email: </label>
+                            <input id="email" type="text" />
+                        </p>
+                        <p>
+                            <label htmlFor="password">Password: </label>
+                            <input id="password" type="password" />
+                        </p>
+                    </form>
+                </Box>
+                <Box
+                    m={2}
+                    sx={{
+                        borderBottom: "1px solid black",
+                    }}
+                >
+                    <h4>Search page form</h4>
+                    <form
+                        aria-label="search page form"
+                        onSubmit={(e) => e.preventDefault()}
+                    >
+                        <p>
+                            <label htmlFor="search">Search page: </label>
+                            <input id="search" type="search" />
+                        </p>
+                    </form>
+                </Box>
+                <Box m={2}>
+                    A <code>&lt;form&gt;</code> element needs a name to have the
+                    "form" role.
+                </Box>
             </Wrapper>
         </Grid>
     );

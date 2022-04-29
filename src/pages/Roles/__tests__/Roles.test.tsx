@@ -116,7 +116,9 @@ describe("Roles", () => {
     describe("searchbox", () => {
         it("should exist on load", () => {
             render(<Roles />, { wrapper: BrowserRouter });
-            const searchbox = screen.getByRole("searchbox");
+            const searchbox = screen.getByRole("searchbox", {
+                name: "Search me",
+            });
             expect(searchbox).toBeInTheDocument();
         });
     });
@@ -153,14 +155,25 @@ describe("Roles", () => {
         });
     });
 
-    describe("textbox without declaration", () => {
+    describe("textbox", () => {
         it("should exist on load", () => {
             render(<Roles />, { wrapper: BrowserRouter });
-            const textbox = screen.getByRole("textbox");
+            const textbox = screen.getByRole("textbox", {
+                name: "Name",
+            });
 
             expect(textbox).toBeInTheDocument();
         });
     });
+
+    // describe("textbox without declaration", () => {
+    //     it("should exist on load", () => {
+    //         render(<Roles />, { wrapper: BrowserRouter });
+    //         const textbox = screen.getByRole("textbox");
+
+    //         expect(textbox).toBeInTheDocument();
+    //     });
+    // });
 
     // describe("textbox", () => {
     //     it("should have value 'Hello World!'", () => {
@@ -288,6 +301,30 @@ describe("Roles", () => {
             await waitForElementToBeRemoved(screen.queryByRole("dialog"));
 
             expect(screen.queryByRole("dialog")).not.toBeInTheDocument();
+        });
+    });
+
+    describe("navigation", () => {
+        it("should exist on load", () => {
+            render(<Roles />, { wrapper: BrowserRouter });
+            const navigation = screen.getByRole("navigation");
+
+            expect(navigation).toBeInTheDocument();
+        });
+    });
+
+    describe("form", () => {
+        it("should exist for 'login form' and 'search page form' on load", () => {
+            render(<Roles />, { wrapper: BrowserRouter });
+            const loginForm = screen.getByRole("form", {
+                name: "login form",
+            });
+            const searchPageForm = screen.getByRole("form", {
+                name: "search page form",
+            });
+
+            expect(loginForm).toBeInTheDocument();
+            expect(searchPageForm).toBeInTheDocument();
         });
     });
 });
