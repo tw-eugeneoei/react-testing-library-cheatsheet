@@ -463,8 +463,9 @@ const Roles = () => {
                     <p>
                         No native HTML element with this role. In this example,
                         using Material UI's <code>&lt;Dialog&gt;</code>{" "}
-                        component where the role "dialog" is applied. Similar
-                        application in Bootstrap
+                        component where the role "dialog" is applied to{" "}
+                        <code>&lt;div&gt;</code> element containing content.
+                        Similar application in Bootstrap
                     </p>
                 </Box>
             </Wrapper>
@@ -616,6 +617,102 @@ const Roles = () => {
                         <li>Orange</li>
                         <li>Pear</li>
                     </ol>
+                </Box>
+                <Box m={2}>
+                    <p>
+                        The "list" role can also be assigned to{" "}
+                        <code>&lt;dl&gt;</code> element allow querying by name
+                        to query for specific <code>&lt;dl&gt;</code> within UI.
+                    </p>
+                </Box>
+            </Wrapper>
+            <Wrapper>
+                <h3>"paragraph"</h3>
+                <Box m={2}>
+                    <p>
+                        No native HTML elements with this role. Assigned
+                        manaually. Note that <code>&lt;p&gt;</code> element does
+                        not have the implicit role "paragraph".
+                    </p>
+                </Box>
+            </Wrapper>
+            <Wrapper>
+                <h3>"presentation"</h3>
+                <Box m={2}>
+                    <p>
+                        No native HTML elements with this role. Assigned
+                        manaually. In Material UI's <code>&lt;Dialog&gt;</code>{" "}
+                        component, the "presentation" role is assigned to the
+                        wrapping <code>&lt;div&gt;</code> element around the
+                        "dialog role".
+                    </p>
+                </Box>
+            </Wrapper>
+
+            <Wrapper>
+                <h3>"blockquote"</h3>
+                <Box
+                    m={2}
+                    sx={{
+                        border: "1px solid black",
+                        padding: "8px",
+                    }}
+                >
+                    <blockquote
+                        cite="http://www.worldwildlife.org/who/index.html"
+                        role="blockquote"
+                    >
+                        <p>
+                            For 50 years, WWF has been protecting the future of
+                            nature. The world's leading conservation
+                            organization, WWF works in 100 countries and is
+                            supported by 1.2 million members in the United
+                            States and close to 5 million globally.
+                        </p>
+                    </blockquote>
+                </Box>
+                <Box m={2}>
+                    <p>
+                        No native HTML elements with this role. Assigned
+                        manaually. Note that <code>&lt;blockquote&gt;</code>{" "}
+                        element does not have the implicit role "blockquote".
+                    </p>
+                </Box>
+            </Wrapper>
+
+            <Wrapper>
+                <h3>"caption"</h3>
+                <figure aria-label="Shock image">
+                    <img
+                        src="https://www.memesmonkey.com/images/memesmonkey/d2/d2ef2de17b077420d0120bd6f4c505f0.jpeg"
+                        alt="shock"
+                        css={image}
+                    />
+                    <figcaption role="caption">Shock</figcaption>
+                </figure>
+                <Box m={2}>
+                    <p>
+                        No native HTML elements with this role. Assigned
+                        manaually. Note that neither{" "}
+                        <code>&lt;caption&gt;</code> nor{" "}
+                        <code>&lt;figcaption&gt;</code>
+                        elements have the implicit role "caption".
+                    </p>
+                </Box>
+                <Box
+                    m={2}
+                    sx={{
+                        textAlign: "left",
+                    }}
+                >
+                    <p>Ensure element assigned "caption" role is:</p>
+                    <ul>
+                        <li>
+                            a direct child of a figure, table, grid, or treegrid
+                        </li>
+                        <li>the first child of a table, grid, or treegrid</li>
+                        <li>is the first or last child of a figure</li>
+                    </ul>
                 </Box>
             </Wrapper>
         </Grid>

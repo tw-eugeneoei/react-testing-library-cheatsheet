@@ -414,4 +414,22 @@ describe("Roles", () => {
             expect(fruits.length).toBe(3);
         });
     });
+
+    describe("blockquote", () => {
+        it("should exist on load", () => {
+            render(<Roles />, { wrapper: BrowserRouter });
+            const blockquote = screen.getByRole("blockquote");
+
+            expect(blockquote).toBeInTheDocument();
+        });
+    });
+
+    describe("caption", () => {
+        it("should exist on load", () => {
+            render(<Roles />, { wrapper: BrowserRouter });
+            const caption = screen.getByRole("caption");
+
+            expect(caption).toBeInTheDocument();
+        });
+    });
 });
