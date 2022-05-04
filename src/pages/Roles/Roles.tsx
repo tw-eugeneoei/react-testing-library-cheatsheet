@@ -131,14 +131,14 @@ const Roles = () => {
             <Wrapper>
                 <h3>
                     <div>"combobox"</div>
-                    <div>
+                    <p>
                         <code>&lt;select&gt;</code>
-                    </div>
+                    </p>
                     <p>&</p>
                     <div>"option"</div>
-                    <div>
+                    <p>
                         <code>&lt;option&gt;</code>
-                    </div>
+                    </p>
                 </h3>
                 <select>
                     <option>Apple</option>
@@ -384,16 +384,24 @@ const Roles = () => {
                 <p>
                     <code>&lt;article&gt;</code>
                 </p>
+                <Box
+                    m={2}
+                    sx={{
+                        border: "1px solid black",
+                    }}
+                >
+                    <article aria-label="Article Name">
+                        <p>This is some article.</p>
+                    </article>
+                </Box>
                 <Box m={2}>
                     <p>
                         Give <code>&lt;article&gt;</code> element an
-                        "aria-label" attribute allows querying an "article" role
-                        by its "name".
+                        "aria-label" or "aria-labelledby" (if title of said
+                        article is on UI) attribute allows querying an "article"
+                        role by its "name".
                     </p>
                 </Box>
-                <article aria-label="Article Name">
-                    <p>This is some article.</p>
-                </article>
             </Wrapper>
             <Wrapper>
                 <h3>"tooltip"</h3>
@@ -475,16 +483,16 @@ const Roles = () => {
             </Wrapper>
             <Wrapper>
                 <h3>"form"</h3>
-                <code>&lt;form aria-label="form name"&gt;</code>
+                <code>&lt;form&gt;</code>
                 <Box
                     m={2}
                     sx={{
                         borderBottom: "1px solid black",
                     }}
                 >
-                    <h4>Login form</h4>
+                    <h4 id="login-form">Login form</h4>
                     <form
-                        aria-label="login form"
+                        aria-labelledby="login-form"
                         onSubmit={(e) => e.preventDefault()}
                     >
                         <p>
@@ -503,9 +511,9 @@ const Roles = () => {
                         borderBottom: "1px solid black",
                     }}
                 >
-                    <h4>Search page form</h4>
+                    <h4 id="search-page-form">Search page form</h4>
                     <form
-                        aria-label="search page form"
+                        aria-labelledby="search-page-form"
                         onSubmit={(e) => e.preventDefault()}
                     >
                         <p>
@@ -517,6 +525,57 @@ const Roles = () => {
                 <Box m={2}>
                     A <code>&lt;form&gt;</code> element needs a name to have the
                     "form" role.
+                </Box>
+            </Wrapper>
+            <Wrapper>
+                <h3>
+                    <div>"term"</div>
+                    <p>
+                        <code>&lt;dfn&gt;</code> & <code>&lt;dt&gt;</code>
+                    </p>
+                    <p>&</p>
+                    <div>"definition"</div>
+                    <p>
+                        <code>&lt;dd&gt;</code>
+                    </p>
+                </h3>
+                <Box
+                    m={2}
+                    sx={{
+                        border: "1px solid black",
+                        padding: "4px",
+                    }}
+                >
+                    <p>
+                        <dfn aria-label="HTML">HTML</dfn>. Using{" "}
+                        <code>&lt;dfn&gt;</code> on text "HTML".
+                    </p>
+                </Box>
+                <Box
+                    m={2}
+                    sx={{
+                        border: "1px solid black",
+                        padding: "4px 12px",
+                        textAlign: "left",
+                    }}
+                >
+                    {/*
+                        <dl> element does not have implicit "list" role
+                        https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/pull/807
+                    */}
+                    {/* eslint-disable-next-line jsx-a11y/no-redundant-roles */}
+                    <dl role="list" aria-label="Drinks list">
+                        <dt aria-label="Coffee">Coffee</dt>
+                        <dd aria-label="Black hot drink">Black hot drink</dd>
+                        <dt aria-label="Milk">Milk</dt>
+                        <dd aria-label="White cold drink">White cold drink</dd>
+                    </dl>
+                </Box>
+                <Box m={2}>
+                    <p>
+                        Provide the "aria-label" attribute and you can query by
+                        role using "name".
+                    </p>
                 </Box>
             </Wrapper>
         </Grid>

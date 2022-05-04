@@ -317,14 +317,66 @@ describe("Roles", () => {
         it("should exist for 'login form' and 'search page form' on load", () => {
             render(<Roles />, { wrapper: BrowserRouter });
             const loginForm = screen.getByRole("form", {
-                name: "login form",
+                name: "Login form",
             });
             const searchPageForm = screen.getByRole("form", {
-                name: "search page form",
+                name: "Search page form",
             });
 
             expect(loginForm).toBeInTheDocument();
             expect(searchPageForm).toBeInTheDocument();
+        });
+    });
+
+    describe("term using <dfn> element", () => {
+        it("should exist on load", () => {
+            render(<Roles />, { wrapper: BrowserRouter });
+            const htmlTerm = screen.getByRole("term", {
+                name: "HTML",
+            });
+
+            expect(htmlTerm).toBeInTheDocument();
+        });
+    });
+
+    describe("term using <dt> element", () => {
+        it("should exist on load", () => {
+            render(<Roles />, { wrapper: BrowserRouter });
+            const coffeeTerm = screen.getByRole("term", {
+                name: "Coffee",
+            });
+            const milkTerm = screen.getByRole("term", {
+                name: "Milk",
+            });
+
+            expect(coffeeTerm).toBeInTheDocument();
+            expect(milkTerm).toBeInTheDocument();
+        });
+    });
+
+    describe("definition", () => {
+        it("should exist on load", () => {
+            render(<Roles />, { wrapper: BrowserRouter });
+            const blackHotDrinkDefinition = screen.getByRole("definition", {
+                name: "Black hot drink",
+            });
+            const whiteColdDrinkDefinition = screen.getByRole("definition", {
+                name: "White cold drink",
+            });
+
+            expect(blackHotDrinkDefinition).toBeInTheDocument();
+            expect(whiteColdDrinkDefinition).toBeInTheDocument();
+        });
+    });
+
+    describe("list assigned to <dl> element", () => {
+        it("should exist on load", () => {
+            render(<Roles />, { wrapper: BrowserRouter });
+            const drinksList = screen.getByRole("list", {
+                name: "Drinks list",
+            });
+
+            expect(drinksList).toBeInTheDocument();
         });
     });
 });

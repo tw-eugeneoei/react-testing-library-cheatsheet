@@ -12,3 +12,7 @@ instead of using <command>ByTestId which will require a corresponding declaratio
 
 -   [`<input>`](./src/components/Input)
 - -->
+
+<!-- # Resources
+
+-   [aria-label](https://www.aditus.io/aria/aria-label/) -->
