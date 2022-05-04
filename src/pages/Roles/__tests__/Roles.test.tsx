@@ -2,6 +2,7 @@ import {
     render,
     screen,
     waitForElementToBeRemoved,
+    within,
 } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { BrowserRouter } from "react-router-dom";
@@ -377,6 +378,40 @@ describe("Roles", () => {
             });
 
             expect(drinksList).toBeInTheDocument();
+        });
+    });
+
+    describe("list", () => {
+        it("should exist on load", () => {
+            render(<Roles />, { wrapper: BrowserRouter });
+            const superheroesList = screen.getByRole("list", {
+                name: "Superheroes",
+            });
+            const fruitsList = screen.getByRole("list", {
+                name: "Fruits",
+            });
+
+            expect(superheroesList).toBeInTheDocument();
+            expect(fruitsList).toBeInTheDocument();
+        });
+    });
+
+    describe("listitem", () => {
+        it("should have 3 items in superheroes and fruits", () => {
+            render(<Roles />, { wrapper: BrowserRouter });
+            const superheroesList = screen.getByRole("list", {
+                name: "Superheroes",
+            });
+            const fruitsList = screen.getByRole("list", {
+                name: "Fruits",
+            });
+
+            const superheroes =
+                within(superheroesList).getAllByRole("listitem");
+            const fruits = within(fruitsList).getAllByRole("listitem");
+
+            expect(superheroes.length).toBe(3);
+            expect(fruits.length).toBe(3);
         });
     });
 });

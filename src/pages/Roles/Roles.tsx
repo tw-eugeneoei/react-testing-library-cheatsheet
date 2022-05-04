@@ -578,6 +578,46 @@ const Roles = () => {
                     </p>
                 </Box>
             </Wrapper>
+            <Wrapper>
+                <h3>
+                    <div>"list"</div>
+                    <p>
+                        <code>&lt;ul&gt;</code> & <code>&lt;ol&gt;</code>
+                    </p>
+                    <p>&</p>
+                    <div>"listitem"</div>
+                    <p>
+                        <code>&lt;li&gt;</code>
+                    </p>
+                </h3>
+                <Box
+                    m={2}
+                    sx={{
+                        borderBottom: "1px solid black",
+                        textAlign: "left",
+                    }}
+                >
+                    <h3 id="superheroes">Superheroes</h3>
+                    <ul aria-labelledby="superheroes">
+                        <li>Captain Marvel</li>
+                        <li>Spiderman</li>
+                        <li>Ironman</li>
+                    </ul>
+                </Box>
+                <Box
+                    m={2}
+                    sx={{
+                        textAlign: "left",
+                    }}
+                >
+                    <h3 id="fruits">Fruits</h3>
+                    <ol aria-labelledby="fruits">
+                        <li>Durian</li>
+                        <li>Orange</li>
+                        <li>Pear</li>
+                    </ol>
+                </Box>
+            </Wrapper>
         </Grid>
     );
 };
