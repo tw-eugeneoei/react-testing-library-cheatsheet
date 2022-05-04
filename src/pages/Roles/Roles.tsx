@@ -92,9 +92,9 @@ const Roles = () => {
                 <h3>"grid", "gridcell"</h3>
                 <Box m={2}>
                     <p>
-                        No native HTML elements with these roles. These roles
-                        can be assigned when you are trying to recreate
-                        something like Excel.
+                        No native HTML element with these roles. These roles can
+                        be assigned when you are trying to recreate something
+                        like Excel.
                     </p>
                     <p>
                         Seems to be what{" "}
@@ -272,8 +272,8 @@ const Roles = () => {
                 <h3>"tree", "treeitem" & "group"</h3>
                 <Box m={2}>
                     <p>
-                        No native HTML elements corresponds to these roles.
-                        These are assigned.
+                        No native HTML element corresponds to these roles. These
+                        are assigned.
                     </p>
                     <p>
                         See <Link to="/roles/tree-treeitem-group">this</Link>{" "}
@@ -608,6 +608,7 @@ const Roles = () => {
                 <Box
                     m={2}
                     sx={{
+                        borderBottom: "1px solid black",
                         textAlign: "left",
                     }}
                 >
@@ -630,7 +631,7 @@ const Roles = () => {
                 <h3>"paragraph"</h3>
                 <Box m={2}>
                     <p>
-                        No native HTML elements with this role. Assigned
+                        No native HTML element with this role. Assigned
                         manaually. Note that <code>&lt;p&gt;</code> element does
                         not have the implicit role "paragraph".
                     </p>
@@ -640,7 +641,7 @@ const Roles = () => {
                 <h3>"presentation"</h3>
                 <Box m={2}>
                     <p>
-                        No native HTML elements with this role. Assigned
+                        No native HTML element with this role. Assigned
                         manaually. In Material UI's <code>&lt;Dialog&gt;</code>{" "}
                         component, the "presentation" role is assigned to the
                         wrapping <code>&lt;div&gt;</code> element around the
@@ -673,13 +674,12 @@ const Roles = () => {
                 </Box>
                 <Box m={2}>
                     <p>
-                        No native HTML elements with this role. Assigned
+                        No native HTML element with this role. Assigned
                         manaually. Note that <code>&lt;blockquote&gt;</code>{" "}
                         element does not have the implicit role "blockquote".
                     </p>
                 </Box>
             </Wrapper>
-
             <Wrapper>
                 <h3>"caption"</h3>
                 <figure aria-label="Shock image">
@@ -692,7 +692,7 @@ const Roles = () => {
                 </figure>
                 <Box m={2}>
                     <p>
-                        No native HTML elements with this role. Assigned
+                        No native HTML element with this role. Assigned
                         manaually. Note that neither{" "}
                         <code>&lt;caption&gt;</code> nor{" "}
                         <code>&lt;figcaption&gt;</code>
@@ -713,6 +713,100 @@ const Roles = () => {
                         <li>the first child of a table, grid, or treegrid</li>
                         <li>is the first or last child of a figure</li>
                     </ul>
+                </Box>
+            </Wrapper>
+            <Wrapper>
+                <h3>"feed"</h3>
+                <Box m={2}>
+                    <p>
+                        No native HTML element with this role. Assigned
+                        manaually.
+                    </p>
+                    <p>
+                        Read more about it{" "}
+                        <a
+                            href="https://www.w3.org/TR/wai-aria-1.2/#feed"
+                            target="_blank"
+                            rel="noreferrer"
+                        >
+                            here
+                        </a>
+                        .
+                    </p>
+                </Box>
+            </Wrapper>
+            <Wrapper>
+                <h3>"strong"</h3>
+                <Box
+                    m={2}
+                    sx={{ border: "1px solid black", padding: "4px 8px" }}
+                >
+                    <p>
+                        <strong role="strong">Important:</strong> Before
+                        proceeding, make sure you add plenty of butter.
+                    </p>
+                </Box>
+                <Box m={2}>
+                    <p>
+                        No native HTML element with this role. Assigned
+                        manaually. Note that <code>&lt;strong&gt;</code> element
+                        does not have the implicit role "strong". Assign the
+                        "strong" role to content that is important, serious, or
+                        urgent. This is different from "emphasis".
+                    </p>
+                </Box>
+            </Wrapper>
+            <Wrapper>
+                <h3>"emphasis"</h3>
+                <Box
+                    m={2}
+                    sx={{ border: "1px solid black", padding: "4px 8px" }}
+                >
+                    <p>
+                        This is <em role="emphasis">not</em> a drill!
+                    </p>
+                </Box>
+                <Box m={2}>
+                    <p>
+                        No native HTML element with this role. Assigned
+                        manaually. Note that <code>&lt;em&gt;</code> element
+                        does not have the implicit role "emphasis". Assign the
+                        "emphasis" role to stress or emphasise on content. This
+                        is different from "strong".
+                    </p>
+                </Box>
+            </Wrapper>
+            <Wrapper>
+                <h3>"main"</h3>
+                <code>&lt;main&gt;</code>
+            </Wrapper>
+            <Wrapper>
+                <h3>"meter"</h3>
+                <code>&lt;meter&gt;</code>
+                <Box m={2}>
+                    <label htmlFor="fuel">Fuel level</label>:&nbsp;
+                    <meter
+                        id="fuel"
+                        min={0}
+                        max={100}
+                        low={33}
+                        high={66}
+                        optimum={80}
+                        value={90}
+                        // eslint-disable-next-line jsx-a11y/role-has-required-aria-props
+                        role="meter"
+                    >
+                        at 50/100
+                    </meter>
+                </Box>
+                <Box m={2}>
+                    <p>
+                        No native HTML element with this role. Assigned
+                        manaually. Note that <code>&lt;meter&gt;</code> element
+                        does not have the implicit role "meter". Avoid using
+                        "meter" role to indicate progress. Refer to
+                        "progressbar" role.
+                    </p>
                 </Box>
             </Wrapper>
         </Grid>

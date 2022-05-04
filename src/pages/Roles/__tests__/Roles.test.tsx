@@ -432,4 +432,33 @@ describe("Roles", () => {
             expect(caption).toBeInTheDocument();
         });
     });
+
+    describe("strong", () => {
+        it("should exist on load", () => {
+            render(<Roles />, { wrapper: BrowserRouter });
+            const strongText = screen.getByRole("strong");
+
+            expect(strongText).toBeInTheDocument();
+        });
+    });
+
+    describe("emphasis", () => {
+        it("should exist on load", () => {
+            render(<Roles />, { wrapper: BrowserRouter });
+            const emphasisText = screen.getByRole("emphasis");
+
+            expect(emphasisText).toBeInTheDocument();
+        });
+    });
+
+    describe("meter", () => {
+        it("should exist on load", () => {
+            render(<Roles />, { wrapper: BrowserRouter });
+            const meter = screen.getByRole("meter", {
+                name: "Fuel level",
+            });
+
+            expect(meter).toBeInTheDocument();
+        });
+    });
 });
